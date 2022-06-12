@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class RealmData: Object {
+class RealmTaskData: Object {
     @objc dynamic var title = ""
     @objc dynamic var contents = ""
     @objc dynamic var satisfy: Int = Int()
