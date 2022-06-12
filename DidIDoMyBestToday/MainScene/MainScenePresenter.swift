@@ -10,6 +10,7 @@ import UIKit
 
 class MainScenePresenter: NSObject {
     private weak var viewController: MainSceneProtocol?
+    let today = Date()
     
     init(viewController: MainSceneProtocol?) {
         self.viewController = viewController
@@ -37,4 +38,13 @@ extension MainScenePresenter: UITableViewDataSource {
 
 extension MainScenePresenter: UITableViewDelegate {
     
+}
+
+extension MainScenePresenter {
+    func getToday() -> String {
+        let year = Calendar.current.component(.year, from: today)
+        let month = Calendar.current.component(.month, from: today)
+        let day = Calendar.current.component(.day, from: today)
+        return "\(year)-\(month)-\(day)"
+    }
 }
