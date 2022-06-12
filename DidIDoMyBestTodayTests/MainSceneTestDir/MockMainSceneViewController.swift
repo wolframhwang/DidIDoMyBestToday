@@ -6,7 +6,19 @@
 //
 
 import Foundation
+import XCTest
+
+@testable import DidIDoMyBestToday
 
 class MockMainSceneViewController: MainSceneProtocol {
+    var isCalledSetLayout: Bool = false
+    var isCalledSetAttribute: Bool = false
+    func setLayout() {
+        isCalledSetLayout = true
+    }
+    
+    func setAttribute() {
+        isCalledSetAttribute = true
+    }    
     
 }

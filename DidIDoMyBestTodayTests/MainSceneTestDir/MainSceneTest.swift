@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable DidIDoMyBestTodayTests
+@testable import DidIDoMyBestToday
 
 class MainSceneTest: XCTestCase {
     var sut: MainScenePresenter!
@@ -25,9 +25,9 @@ class MainSceneTest: XCTestCase {
         super.tearDown()
     }
     func test_viewDidLoad() {
-            sut.viewDidLoad()
-            
-            XCTAssertTrue(viewController.isCalledSetLayout)
+        sut.viewDidLoad()
+        XCTAssertTrue(viewController.isCalledSetLayout)
+        XCTAssertTrue(viewController.isCalledSetAttribute)                
     }
     
     

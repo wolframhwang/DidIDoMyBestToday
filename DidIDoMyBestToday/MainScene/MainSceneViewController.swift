@@ -8,11 +8,22 @@
 import UIKit
 
 class MainSceneViewController: UIViewController {
-
+    private lazy var presenter = MainScenePresenter(viewController: self)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter.viewDidLoad()
     }
 
 
 }
 
+extension MainSceneViewController: MainSceneProtocol {
+    func setLayout() {
+        
+    }
+    
+    func setAttribute() {
+        
+    }
+}
