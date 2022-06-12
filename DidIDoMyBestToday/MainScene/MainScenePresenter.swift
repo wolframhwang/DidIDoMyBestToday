@@ -25,6 +25,14 @@ class MainScenePresenter: NSObject {
         }
     }
     
+    func viewWillAppear() {
+        todaysTask()
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.reloadData()
+        }
+        
+    }
+    
     func didTappedAddTodoTask() {
         viewController?.showWriteTodoTask()
     }
@@ -32,18 +40,29 @@ class MainScenePresenter: NSObject {
 
 extension MainScenePresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView
+                    .dequeueReusableCell(withIdentifier: "TodoListTableCell", for: indexPath)
+                    as! TodoListTableCell
+
+        cell.setText(text: tasks[indexPath.row].title)
+        cell.setImage(point: changeSatisfyToScore(score: tasks[indexPath.row].satisfy))
+        
+        return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
 }
 
 extension MainScenePresenter: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension MainScenePresenter {
@@ -59,10 +78,31 @@ extension MainScenePresenter {
     
     func todaysTask() {
         self.tasks = realm.getRealmDataInfo(condition: getToday())
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.reloadData()
+        }
+        
     }
     
     /// 불필요한 테스팅용 함수임
     func getTasks() -> [TaskData] {
         return tasks
+    }
+    
+    func changeSatisfyToScore(score: Int) -> ScoreEnum {
+        switch score {
+        case 1:
+            return .one
+        case 2:
+            return .two
+        case 3:
+            return .three
+        case 4:
+            return .four
+        case 5:
+            return .five
+        default:
+            return .zero
+        }
     }
 }

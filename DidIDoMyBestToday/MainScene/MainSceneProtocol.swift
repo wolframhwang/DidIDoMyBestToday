@@ -11,4 +11,5 @@ protocol MainSceneProtocol: AnyObject {
     func setLayout()
     func setAttribute()
     func showWriteTodoTask()
+    func reloadData()
 }
