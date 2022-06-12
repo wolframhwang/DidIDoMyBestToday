@@ -11,8 +11,10 @@ import XCTest
 @testable import DidIDoMyBestToday
 
 class MockMainSceneViewController: MainSceneProtocol {
+    
     var isCalledSetLayout: Bool = false
     var isCalledSetAttribute: Bool = false
+    var isCalledShowWriteTodoTask: Bool = false
     func setLayout() {
         isCalledSetLayout = true
     }
@@ -21,4 +23,7 @@ class MockMainSceneViewController: MainSceneProtocol {
         isCalledSetAttribute = true
     }    
     
+    func showWriteTodoTask() {
+        isCalledShowWriteTodoTask = true
+    }
 }

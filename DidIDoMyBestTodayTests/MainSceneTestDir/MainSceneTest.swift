@@ -31,6 +31,12 @@ class MainSceneTest: XCTestCase {
         XCTAssertTrue(viewController.isCalledSetAttribute)                
     }
     
+    func test_showWriteTodoTask() {
+        sut.didTappedAddTodoTask()
+        
+        XCTAssertTrue(viewController.isCalledShowWriteTodoTask)
+    }
+    
     func test_getToday() {
         XCTAssertEqual(sut.getToday(), "2022-06-12")
     }

@@ -118,6 +118,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7B48A4CF2855BB9100FE34C0 /* WriteTodoSceneTestDir */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WriteTodoSceneTestDir;
+			sourceTree = "<group>";
+		};
 		7BFB05182853640A009EA3E1 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +192,7 @@
 		7BFB055928558524009EA3E1 /* MainSceneTestDir */ = {
 			isa = PBXGroup;
 			children = (
+				7B48A4CF2855BB9100FE34C0 /* WriteTodoSceneTestDir */,
 				7BFB0557285584E6009EA3E1 /* MainSceneTest.swift */,
 				7BFB055B28558D77009EA3E1 /* MockMainSceneViewController.swift */,
 			);
