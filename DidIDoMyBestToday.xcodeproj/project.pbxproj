@@ -140,10 +140,10 @@
 		7BFB055428558443009EA3E1 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				7BFB055D28558DA2009EA3E1 /* MainSceneProtocol.swift */,
 				7BFB05282853640A009EA3E1 /* MainSceneViewController.swift */,
 				7BFB055528558492009EA3E1 /* MainScenePresenter.swift */,
 				7BFB052A2853640A009EA3E1 /* MainScene.storyboard */,
-				7BFB055D28558DA2009EA3E1 /* MainSceneProtocol.swift */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
