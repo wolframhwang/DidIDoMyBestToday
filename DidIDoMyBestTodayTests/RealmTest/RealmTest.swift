@@ -57,7 +57,7 @@ class RealmTest: XCTestCase {
         data = realm.getRealmDataInfo(condition: nil)
         print(data)
         XCTAssertEqual(realm.getRealmDataInfo(condition: nil).count, 4)
-        
+        XCTAssertEqual(realm.getRealmDataInfo(condition: "2022-06-12").count, 4)
     }
     
     func test_Remove() {
