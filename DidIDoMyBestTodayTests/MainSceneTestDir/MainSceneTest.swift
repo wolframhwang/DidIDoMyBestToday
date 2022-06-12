@@ -32,7 +32,7 @@ class MainSceneTest: XCTestCase {
     }
     
     func test_getToday() {
-        XCTAssertEqual(sut.getToday(), "2022-6-12")
+        XCTAssertEqual(sut.getToday(), "2022-06-12")
     }
     
     func testPerformanceExample() throws {

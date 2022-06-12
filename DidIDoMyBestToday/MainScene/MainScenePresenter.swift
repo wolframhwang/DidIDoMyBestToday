@@ -45,6 +45,9 @@ extension MainScenePresenter {
         let year = Calendar.current.component(.year, from: today)
         let month = Calendar.current.component(.month, from: today)
         let day = Calendar.current.component(.day, from: today)
+        if month < 10 {
+            return "\(year)-0\(month)-\(day)"
+        }
         return "\(year)-\(month)-\(day)"
     }
 }
