@@ -278,8 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				7BFB05672855B7AF009EA3E1 /* WriteTodoTaskSceneViewController.swift */,
-				7BFB05692855B805009EA3E1 /* WriteTodoaskScenePresenter.swift */,
 				7BFB056B2855B852009EA3E1 /* WriteTodoTaskSceneProtocol.swift */,
+				7BFB05692855B805009EA3E1 /* WriteTodoaskScenePresenter.swift */,
 				7BFB056D2855B898009EA3E1 /* WriteTodoSceneView.storyboard */,
 			);
 			path = WriteTodoTaskScene;

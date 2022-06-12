@@ -12,9 +12,11 @@ import XCTest
 
 class MockMainSceneViewController: MainSceneProtocol {
     
+    
     var isCalledSetLayout: Bool = false
     var isCalledSetAttribute: Bool = false
     var isCalledShowWriteTodoTask: Bool = false
+    var isCalledReloadData: Bool = false
     func setLayout() {
         isCalledSetLayout = true
     }
@@ -25,5 +27,8 @@ class MockMainSceneViewController: MainSceneProtocol {
     
     func showWriteTodoTask() {
         isCalledShowWriteTodoTask = true
+    }
+    func reloadData() {
+        isCalledReloadData = true
     }
 }
