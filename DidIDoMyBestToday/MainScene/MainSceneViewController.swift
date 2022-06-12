@@ -28,6 +28,7 @@ extension MainSceneViewController: MainSceneProtocol {
     }
     
     func setAttribute() {
-        
+        todoListView.delegate = presenter
+        todoListView.dataSource = presenter
     }
 }
