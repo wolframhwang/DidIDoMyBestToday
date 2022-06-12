@@ -8,7 +8,11 @@
 import UIKit
 
 class MainSceneViewController: UIViewController {
+    @IBOutlet weak var todoListView: UITableView!
+    
     private lazy var presenter = MainScenePresenter(viewController: self)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
