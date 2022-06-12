@@ -24,12 +24,16 @@ class MainSceneTest: XCTestCase {
         viewController = nil
         super.tearDown()
     }
+    
     func test_viewDidLoad() {
         sut.viewDidLoad()
         XCTAssertTrue(viewController.isCalledSetLayout)
         XCTAssertTrue(viewController.isCalledSetAttribute)                
     }
     
+    func test_getToday() {
+        XCTAssertEqual(sut.getToday(), "2022-6-12")
+    }
     
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
