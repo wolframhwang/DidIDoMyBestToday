@@ -13,4 +13,6 @@ class RealmData: Object {
     @objc dynamic var contents = ""
     @objc dynamic var satisfy: Int = Int()
     @objc dynamic var date: Date = Date()
+    
+    
 }
