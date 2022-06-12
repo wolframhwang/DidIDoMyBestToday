@@ -15,6 +15,8 @@
 		7B48A4DD2855CFAD00FE34C0 /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4DC2855CFAD00FE34C0 /* TaskData.swift */; };
 		7B48A4E52855DEC100FE34C0 /* TodoListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4E32855DEC100FE34C0 /* TodoListTableCell.swift */; };
 		7B48A4E92855E05B00FE34C0 /* ScoreEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4E82855E05B00FE34C0 /* ScoreEnum.swift */; };
+		7B48A4ED2855F89100FE34C0 /* WriteSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4EC2855F89100FE34C0 /* WriteSceneTest.swift */; };
+		7B48A4EF2855F8A100FE34C0 /* MockWriteSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4EE2855F8A100FE34C0 /* MockWriteSceneViewController.swift */; };
 		7BFB05252853640A009EA3E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05242853640A009EA3E1 /* AppDelegate.swift */; };
 		7BFB05272853640A009EA3E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05262853640A009EA3E1 /* SceneDelegate.swift */; };
 		7BFB05292853640A009EA3E1 /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05282853640A009EA3E1 /* MainSceneViewController.swift */; };
@@ -65,6 +67,8 @@
 		7B48A4DC2855CFAD00FE34C0 /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 		7B48A4E32855DEC100FE34C0 /* TodoListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableCell.swift; sourceTree = "<group>"; };
 		7B48A4E82855E05B00FE34C0 /* ScoreEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEnum.swift; sourceTree = "<group>"; };
+		7B48A4EC2855F89100FE34C0 /* WriteSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteSceneTest.swift; sourceTree = "<group>"; };
+		7B48A4EE2855F8A100FE34C0 /* MockWriteSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWriteSceneViewController.swift; sourceTree = "<group>"; };
 		7BFB05212853640A009EA3E1 /* DidIDoMyBestToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DidIDoMyBestToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFB05242853640A009EA3E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BFB05262853640A009EA3E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		7B48A4CF2855BB9100FE34C0 /* WriteTodoSceneTestDir */ = {
 			isa = PBXGroup;
 			children = (
+				7B48A4EC2855F89100FE34C0 /* WriteSceneTest.swift */,
+				7B48A4EE2855F8A100FE34C0 /* MockWriteSceneViewController.swift */,
 			);
 			path = WriteTodoSceneTestDir;
 			sourceTree = "<group>";
@@ -550,6 +556,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B48A4ED2855F89100FE34C0 /* WriteSceneTest.swift in Sources */,
+				7B48A4EF2855F8A100FE34C0 /* MockWriteSceneViewController.swift in Sources */,
 				7BFB055C28558D77009EA3E1 /* MockMainSceneViewController.swift in Sources */,
 				7BFB0558285584E6009EA3E1 /* MainSceneTest.swift in Sources */,
 				7B48A4D72855C10E00FE34C0 /* RealmTest.swift in Sources */,
