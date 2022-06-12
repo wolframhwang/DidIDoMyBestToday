@@ -22,6 +22,10 @@ class MainScenePresenter: NSObject {
             self?.viewController?.setAttribute()
         }
     }
+    
+    func didTappedAddTodoTask() {
+        viewController?.showWriteTodoTask()
+    }
 }
 
 extension MainScenePresenter: UITableViewDataSource {
