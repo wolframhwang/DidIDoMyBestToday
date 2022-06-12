@@ -20,6 +20,8 @@ class RealmTest: XCTestCase {
     }
     
     func test_Insert() {
+        realm.removeAllRealmData()
+        
         let data1 = RealmData()
         let data2 = RealmData()
         let data3 = RealmData()
