@@ -25,7 +25,9 @@ class MainSceneViewController: UIViewController {
         presenter.viewDidLoad()
     }
 
-
+    @objc func didTappedAddTodoTask() {
+        presenter.didTappedAddTodoTask()
+    }
 }
 
 extension MainSceneViewController: MainSceneProtocol {
@@ -40,5 +42,11 @@ extension MainSceneViewController: MainSceneProtocol {
     }
     
     func setAttribute() {
+        
+    }
+    
+    func showWriteTodoTask() {
+        let vc = WriteTodoTaskSceneViewController()
+        self.present(vc, animated: true)
     }
 }
