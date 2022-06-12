@@ -10,7 +10,9 @@ import UIKit
 
 class MainScenePresenter: NSObject {
     private weak var viewController: MainSceneProtocol?
-    let today = Date()
+    private var tasks: [TaskData] = []
+    private let realm = RealmDataManager()
+    private let today = Date()
     
     init(viewController: MainSceneProtocol?) {
         self.viewController = viewController
@@ -53,5 +55,14 @@ extension MainScenePresenter {
             return "\(year)-0\(month)-\(day)"
         }
         return "\(year)-\(month)-\(day)"
+    }
+    
+    func todaysTask() {
+        self.tasks = realm.getRealmDataInfo(condition: getToday())
+    }
+    
+    /// 불필요한 테스팅용 함수임
+    func getTasks() -> [TaskData] {
+        return tasks
     }
 }
