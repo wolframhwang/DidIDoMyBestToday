@@ -1,5 +1,5 @@
 //
-//  MainScenePresenter.swift
+//  MainSceneProtocol.swift
 //  DidIDoMyBestToday
 //
 //  Created by 황지웅 on 2022/06/12.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-class MainScenePresenter: NSObject {
+protocol MainSceneProtocol: AnyObject {
     
 }

@@ -18,6 +18,10 @@
 		7BFB05482853640C009EA3E1 /* DidIDoMyBestTodayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05472853640C009EA3E1 /* DidIDoMyBestTodayUITestsLaunchTests.swift */; };
 		7BFB055628558492009EA3E1 /* MainScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB055528558492009EA3E1 /* MainScenePresenter.swift */; };
 		7BFB0558285584E6009EA3E1 /* MainSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB0557285584E6009EA3E1 /* MainSceneTest.swift */; };
+		7BFB055C28558D77009EA3E1 /* MockMainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB055B28558D77009EA3E1 /* MockMainSceneViewController.swift */; };
+		7BFB055E28558DA2009EA3E1 /* MainSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB055D28558DA2009EA3E1 /* MainSceneProtocol.swift */; };
+		7BFB056328558DF7009EA3E1 /* MainSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB055D28558DA2009EA3E1 /* MainSceneProtocol.swift */; };
+		7BFB056428558DFA009EA3E1 /* MainScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB055528558492009EA3E1 /* MainScenePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,8 @@
 		7BFB05472853640C009EA3E1 /* DidIDoMyBestTodayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidIDoMyBestTodayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7BFB055528558492009EA3E1 /* MainScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScenePresenter.swift; sourceTree = "<group>"; };
 		7BFB0557285584E6009EA3E1 /* MainSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneTest.swift; sourceTree = "<group>"; };
+		7BFB055B28558D77009EA3E1 /* MockMainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMainSceneViewController.swift; sourceTree = "<group>"; };
+		7BFB055D28558DA2009EA3E1 /* MainSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +122,8 @@
 		7BFB053A2853640C009EA3E1 /* DidIDoMyBestTodayTests */ = {
 			isa = PBXGroup;
 			children = (
+				7BFB055928558524009EA3E1 /* MainSceneTestDir */,
 				7BFB053B2853640C009EA3E1 /* DidIDoMyBestTodayTests.swift */,
-				7BFB0557285584E6009EA3E1 /* MainSceneTest.swift */,
 			);
 			path = DidIDoMyBestTodayTests;
 			sourceTree = "<group>";
@@ -137,8 +143,18 @@
 				7BFB05282853640A009EA3E1 /* MainSceneViewController.swift */,
 				7BFB055528558492009EA3E1 /* MainScenePresenter.swift */,
 				7BFB052A2853640A009EA3E1 /* MainScene.storyboard */,
+				7BFB055D28558DA2009EA3E1 /* MainSceneProtocol.swift */,
 			);
 			path = MainScene;
+			sourceTree = "<group>";
+		};
+		7BFB055928558524009EA3E1 /* MainSceneTestDir */ = {
+			isa = PBXGroup;
+			children = (
+				7BFB0557285584E6009EA3E1 /* MainSceneTest.swift */,
+				7BFB055B28558D77009EA3E1 /* MockMainSceneViewController.swift */,
+			);
+			path = MainSceneTestDir;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +290,7 @@
 			files = (
 				7BFB05292853640A009EA3E1 /* MainSceneViewController.swift in Sources */,
 				7BFB05252853640A009EA3E1 /* AppDelegate.swift in Sources */,
+				7BFB055E28558DA2009EA3E1 /* MainSceneProtocol.swift in Sources */,
 				7BFB055628558492009EA3E1 /* MainScenePresenter.swift in Sources */,
 				7BFB05272853640A009EA3E1 /* SceneDelegate.swift in Sources */,
 			);
@@ -283,8 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFB055C28558D77009EA3E1 /* MockMainSceneViewController.swift in Sources */,
 				7BFB053C2853640C009EA3E1 /* DidIDoMyBestTodayTests.swift in Sources */,
 				7BFB0558285584E6009EA3E1 /* MainSceneTest.swift in Sources */,
+				7BFB056328558DF7009EA3E1 /* MainSceneProtocol.swift in Sources */,
+				7BFB056428558DFA009EA3E1 /* MainScenePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
