@@ -23,6 +23,8 @@
 		7BEBFAD328563174005CD78C /* WriteTitlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFAD228563174005CD78C /* WriteTitlePresenter.swift */; };
 		7BEBFAD5285631CE005CD78C /* WriteContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFAD4285631CE005CD78C /* WriteContentPresenter.swift */; };
 		7BEBFAD7285631DC005CD78C /* WriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFAD6285631DC005CD78C /* WriteProtocol.swift */; };
+		7BEBFADB28575057005CD78C /* ComposeSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFADA28575057005CD78C /* ComposeSceneTest.swift */; };
+		7BEBFADD285750A3005CD78C /* MockComposeSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFADC285750A3005CD78C /* MockComposeSceneViewController.swift */; };
 		7BFB05252853640A009EA3E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05242853640A009EA3E1 /* AppDelegate.swift */; };
 		7BFB05272853640A009EA3E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05262853640A009EA3E1 /* SceneDelegate.swift */; };
 		7BFB05292853640A009EA3E1 /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05282853640A009EA3E1 /* MainSceneViewController.swift */; };
@@ -81,6 +83,8 @@
 		7BEBFAD228563174005CD78C /* WriteTitlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitlePresenter.swift; sourceTree = "<group>"; };
 		7BEBFAD4285631CE005CD78C /* WriteContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteContentPresenter.swift; sourceTree = "<group>"; };
 		7BEBFAD6285631DC005CD78C /* WriteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteProtocol.swift; sourceTree = "<group>"; };
+		7BEBFADA28575057005CD78C /* ComposeSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeSceneTest.swift; sourceTree = "<group>"; };
+		7BEBFADC285750A3005CD78C /* MockComposeSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComposeSceneViewController.swift; sourceTree = "<group>"; };
 		7BFB05212853640A009EA3E1 /* DidIDoMyBestToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DidIDoMyBestToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFB05242853640A009EA3E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BFB05262853640A009EA3E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 		7BEBFAD928575016005CD78C /* ComposeSceneTest */ = {
 			isa = PBXGroup;
 			children = (
+				7BEBFADA28575057005CD78C /* ComposeSceneTest.swift */,
+				7BEBFADC285750A3005CD78C /* MockComposeSceneViewController.swift */,
 			);
 			path = ComposeSceneTest;
 			sourceTree = "<group>";
@@ -617,6 +623,8 @@
 				7BFB055C28558D77009EA3E1 /* MockMainSceneViewController.swift in Sources */,
 				7BFB0558285584E6009EA3E1 /* MainSceneTest.swift in Sources */,
 				7B48A4D72855C10E00FE34C0 /* RealmTest.swift in Sources */,
+				7BEBFADD285750A3005CD78C /* MockComposeSceneViewController.swift in Sources */,
+				7BEBFADB28575057005CD78C /* ComposeSceneTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
