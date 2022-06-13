@@ -231,6 +231,13 @@
 			path = ComposeScene;
 			sourceTree = "<group>";
 		};
+		7BEBFAD928575016005CD78C /* ComposeSceneTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ComposeSceneTest;
+			sourceTree = "<group>";
+		};
 		7BFB05182853640A009EA3E1 = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +281,7 @@
 		7BFB053A2853640C009EA3E1 /* DidIDoMyBestTodayTests */ = {
 			isa = PBXGroup;
 			children = (
+				7BEBFAD928575016005CD78C /* ComposeSceneTest */,
 				7B48A4D52855C0FF00FE34C0 /* RealmTest */,
 				7BFB055928558524009EA3E1 /* MainSceneTestDir */,
 			);
