@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol WriteToMainProtocol: AnyObject {
+protocol PostToMainProtocol: AnyObject {
     func dataInform(data: TaskData)
 }

@@ -67,7 +67,7 @@ extension MainScenePresenter: UITableViewDelegate {
     }
 }
 
-extension MainScenePresenter: WriteToMainProtocol {
+extension MainScenePresenter: PostToMainProtocol {
     func dataInform(data: TaskData) {
         realm.saveRealmData(data: data.transRealmData())
         tasks.append(data)

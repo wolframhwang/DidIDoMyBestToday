@@ -17,7 +17,7 @@
 		7B48A4E92855E05B00FE34C0 /* ScoreEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4E82855E05B00FE34C0 /* ScoreEnum.swift */; };
 		7B48A4ED2855F89100FE34C0 /* WriteSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4EC2855F89100FE34C0 /* WriteSceneTest.swift */; };
 		7B48A4EF2855F8A100FE34C0 /* MockWriteSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4EE2855F8A100FE34C0 /* MockWriteSceneViewController.swift */; };
-		7B48A4F1285620E600FE34C0 /* WriteToMainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4F0285620E600FE34C0 /* WriteToMainProtocol.swift */; };
+		7B48A4F1285620E600FE34C0 /* PostToMainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4F0285620E600FE34C0 /* PostToMainProtocol.swift */; };
 		7B48A4F4285626B200FE34C0 /* WriteTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4F3285626B200FE34C0 /* WriteTitleCell.swift */; };
 		7B48A4F7285626C900FE34C0 /* WriteContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4F6285626C900FE34C0 /* WriteContentCell.swift */; };
 		7BEBFAD328563174005CD78C /* WriteTitlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFAD228563174005CD78C /* WriteTitlePresenter.swift */; };
@@ -81,7 +81,7 @@
 		7B48A4E82855E05B00FE34C0 /* ScoreEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEnum.swift; sourceTree = "<group>"; };
 		7B48A4EC2855F89100FE34C0 /* WriteSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteSceneTest.swift; sourceTree = "<group>"; };
 		7B48A4EE2855F8A100FE34C0 /* MockWriteSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWriteSceneViewController.swift; sourceTree = "<group>"; };
-		7B48A4F0285620E600FE34C0 /* WriteToMainProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteToMainProtocol.swift; sourceTree = "<group>"; };
+		7B48A4F0285620E600FE34C0 /* PostToMainProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostToMainProtocol.swift; sourceTree = "<group>"; };
 		7B48A4F3285626B200FE34C0 /* WriteTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitleCell.swift; sourceTree = "<group>"; };
 		7B48A4F6285626C900FE34C0 /* WriteContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteContentCell.swift; sourceTree = "<group>"; };
 		7BEBFAD228563174005CD78C /* WriteTitlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitlePresenter.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 		7BFB055428558443009EA3E1 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
-				7B48A4F0285620E600FE34C0 /* WriteToMainProtocol.swift */,
+				7B48A4F0285620E600FE34C0 /* PostToMainProtocol.swift */,
 				7BFB05662855B79D009EA3E1 /* WriteTodoTaskScene */,
 				7BFB055D28558DA2009EA3E1 /* MainSceneProtocol.swift */,
 				7BFB05282853640A009EA3E1 /* MainSceneViewController.swift */,
@@ -615,7 +615,7 @@
 				7BEBFADF28575D22005CD78C /* ComposeSceneViewController.swift in Sources */,
 				7B48A4D22855BE7700FE34C0 /* RealmTaskObject.swift in Sources */,
 				7BEBFAE128575D3E005CD78C /* ComposeScenePresenter.swift in Sources */,
-				7B48A4F1285620E600FE34C0 /* WriteToMainProtocol.swift in Sources */,
+				7B48A4F1285620E600FE34C0 /* PostToMainProtocol.swift in Sources */,
 				7BFB055E28558DA2009EA3E1 /* MainSceneProtocol.swift in Sources */,
 				7B48A4E52855DEC100FE34C0 /* TodoListTableCell.swift in Sources */,
 				7B48A4E92855E05B00FE34C0 /* ScoreEnum.swift in Sources */,

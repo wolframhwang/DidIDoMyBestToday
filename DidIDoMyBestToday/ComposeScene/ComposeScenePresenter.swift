@@ -8,5 +8,7 @@
 import Foundation
 
 class ComposeScenePresenter: NSObject {
+    private weak var viewController: ComposeSceneProtocol? = nil
+    private weak var mainPresenter: PostToMainProtocol? = nil
     
 }

@@ -10,12 +10,12 @@ import UIKit
 
 class WriteTodoTaskScenePresenter : NSObject {
     private weak var viewController: WriteTodoTaskSceneProtocol?
-    private weak var mainPresenter: WriteToMainProtocol?
+    private weak var mainPresenter: PostToMainProtocol?
     private let writeTitlePresenter = WriteTitlePresenter(writeTitelCell: nil)
     private let writeContentPresenter = WriteContentPresenter(writeContent: nil)
     private let today = Date()
     
-    init(_ viewController: WriteTodoTaskSceneProtocol?, _ mainPresenter: WriteToMainProtocol?) {
+    init(_ viewController: WriteTodoTaskSceneProtocol?, _ mainPresenter: PostToMainProtocol?) {
         self.viewController = viewController
         self.mainPresenter = mainPresenter
     }
@@ -37,7 +37,7 @@ class WriteTodoTaskScenePresenter : NSObject {
         self.viewController = viewController
     }
     
-    func setMainPresenter(mainPresenter: WriteToMainProtocol?) {
+    func setMainPresenter(mainPresenter: PostToMainProtocol?) {
         self.mainPresenter = mainPresenter
     }
     
