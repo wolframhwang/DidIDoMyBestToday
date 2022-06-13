@@ -8,5 +8,8 @@
 import Foundation
 
 protocol WriteTodoTaskSceneProtocol: AnyObject {
-    
+    func setLayout()
+    func setAttribute()
+    func reloadData()
+    func closeWindow()
 }

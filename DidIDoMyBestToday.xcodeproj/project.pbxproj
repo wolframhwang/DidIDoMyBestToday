@@ -17,6 +17,12 @@
 		7B48A4E92855E05B00FE34C0 /* ScoreEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4E82855E05B00FE34C0 /* ScoreEnum.swift */; };
 		7B48A4ED2855F89100FE34C0 /* WriteSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4EC2855F89100FE34C0 /* WriteSceneTest.swift */; };
 		7B48A4EF2855F8A100FE34C0 /* MockWriteSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4EE2855F8A100FE34C0 /* MockWriteSceneViewController.swift */; };
+		7B48A4F1285620E600FE34C0 /* WriteToMainProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4F0285620E600FE34C0 /* WriteToMainProtocol.swift */; };
+		7B48A4F4285626B200FE34C0 /* WriteTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4F3285626B200FE34C0 /* WriteTitleCell.swift */; };
+		7B48A4F7285626C900FE34C0 /* WriteContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4F6285626C900FE34C0 /* WriteContentCell.swift */; };
+		7BEBFAD328563174005CD78C /* WriteTitlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFAD228563174005CD78C /* WriteTitlePresenter.swift */; };
+		7BEBFAD5285631CE005CD78C /* WriteContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFAD4285631CE005CD78C /* WriteContentPresenter.swift */; };
+		7BEBFAD7285631DC005CD78C /* WriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEBFAD6285631DC005CD78C /* WriteProtocol.swift */; };
 		7BFB05252853640A009EA3E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05242853640A009EA3E1 /* AppDelegate.swift */; };
 		7BFB05272853640A009EA3E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05262853640A009EA3E1 /* SceneDelegate.swift */; };
 		7BFB05292853640A009EA3E1 /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB05282853640A009EA3E1 /* MainSceneViewController.swift */; };
@@ -69,6 +75,12 @@
 		7B48A4E82855E05B00FE34C0 /* ScoreEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEnum.swift; sourceTree = "<group>"; };
 		7B48A4EC2855F89100FE34C0 /* WriteSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteSceneTest.swift; sourceTree = "<group>"; };
 		7B48A4EE2855F8A100FE34C0 /* MockWriteSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWriteSceneViewController.swift; sourceTree = "<group>"; };
+		7B48A4F0285620E600FE34C0 /* WriteToMainProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteToMainProtocol.swift; sourceTree = "<group>"; };
+		7B48A4F3285626B200FE34C0 /* WriteTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitleCell.swift; sourceTree = "<group>"; };
+		7B48A4F6285626C900FE34C0 /* WriteContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteContentCell.swift; sourceTree = "<group>"; };
+		7BEBFAD228563174005CD78C /* WriteTitlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTitlePresenter.swift; sourceTree = "<group>"; };
+		7BEBFAD4285631CE005CD78C /* WriteContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteContentPresenter.swift; sourceTree = "<group>"; };
+		7BEBFAD6285631DC005CD78C /* WriteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteProtocol.swift; sourceTree = "<group>"; };
 		7BFB05212853640A009EA3E1 /* DidIDoMyBestToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DidIDoMyBestToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFB05242853640A009EA3E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BFB05262853640A009EA3E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +206,24 @@
 			path = Enumerate;
 			sourceTree = "<group>";
 		};
+		7B48A4F22856269800FE34C0 /* WrieTitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B48A4F3285626B200FE34C0 /* WriteTitleCell.swift */,
+				7BEBFAD228563174005CD78C /* WriteTitlePresenter.swift */,
+			);
+			path = WrieTitleCell;
+			sourceTree = "<group>";
+		};
+		7B48A4F5285626B800FE34C0 /* WriteContentCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B48A4F6285626C900FE34C0 /* WriteContentCell.swift */,
+				7BEBFAD4285631CE005CD78C /* WriteContentPresenter.swift */,
+			);
+			path = WriteContentCell;
+			sourceTree = "<group>";
+		};
 		7BFB05182853640A009EA3E1 = {
 			isa = PBXGroup;
 			children = (
@@ -254,12 +284,13 @@
 		7BFB055428558443009EA3E1 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
-				7B48A4DE2855DD2B00FE34C0 /* TodoListCell */,
+				7B48A4F0285620E600FE34C0 /* WriteToMainProtocol.swift */,
 				7BFB05662855B79D009EA3E1 /* WriteTodoTaskScene */,
 				7BFB055D28558DA2009EA3E1 /* MainSceneProtocol.swift */,
 				7BFB05282853640A009EA3E1 /* MainSceneViewController.swift */,
 				7BFB055528558492009EA3E1 /* MainScenePresenter.swift */,
 				7BFB052A2853640A009EA3E1 /* MainScene.storyboard */,
+				7B48A4DE2855DD2B00FE34C0 /* TodoListCell */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -277,6 +308,9 @@
 		7BFB05662855B79D009EA3E1 /* WriteTodoTaskScene */ = {
 			isa = PBXGroup;
 			children = (
+				7BEBFAD6285631DC005CD78C /* WriteProtocol.swift */,
+				7B48A4F5285626B800FE34C0 /* WriteContentCell */,
+				7B48A4F22856269800FE34C0 /* WrieTitleCell */,
 				7BFB05672855B7AF009EA3E1 /* WriteTodoTaskSceneViewController.swift */,
 				7BFB056B2855B852009EA3E1 /* WriteTodoTaskSceneProtocol.swift */,
 				7BFB05692855B805009EA3E1 /* WriteTodoaskScenePresenter.swift */,
@@ -538,14 +572,20 @@
 				7BFB05682855B7AF009EA3E1 /* WriteTodoTaskSceneViewController.swift in Sources */,
 				7B48A4DA2855C19400FE34C0 /* RealmInsertError.swift in Sources */,
 				7B48A4DD2855CFAD00FE34C0 /* TaskData.swift in Sources */,
+				7BEBFAD328563174005CD78C /* WriteTitlePresenter.swift in Sources */,
 				7BFB05292853640A009EA3E1 /* MainSceneViewController.swift in Sources */,
 				7BFB056A2855B805009EA3E1 /* WriteTodoaskScenePresenter.swift in Sources */,
 				7BFB05252853640A009EA3E1 /* AppDelegate.swift in Sources */,
+				7BEBFAD7285631DC005CD78C /* WriteProtocol.swift in Sources */,
 				7B48A4D22855BE7700FE34C0 /* RealmTaskData.swift in Sources */,
+				7B48A4F1285620E600FE34C0 /* WriteToMainProtocol.swift in Sources */,
 				7BFB055E28558DA2009EA3E1 /* MainSceneProtocol.swift in Sources */,
 				7B48A4E52855DEC100FE34C0 /* TodoListTableCell.swift in Sources */,
 				7B48A4E92855E05B00FE34C0 /* ScoreEnum.swift in Sources */,
+				7B48A4F7285626C900FE34C0 /* WriteContentCell.swift in Sources */,
 				7BFB056C2855B852009EA3E1 /* WriteTodoTaskSceneProtocol.swift in Sources */,
+				7BEBFAD5285631CE005CD78C /* WriteContentPresenter.swift in Sources */,
+				7B48A4F4285626B200FE34C0 /* WriteTitleCell.swift in Sources */,
 				7BFB05272853640A009EA3E1 /* SceneDelegate.swift in Sources */,
 				7BFB056528559162009EA3E1 /* MainScenePresenter.swift in Sources */,
 				7B48A4D42855BFA700FE34C0 /* RealmDataManager.swift in Sources */,
