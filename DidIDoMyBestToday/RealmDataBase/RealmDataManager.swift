@@ -10,14 +10,18 @@ import RealmSwift
 
 class RealmDataManager {
     let realmInstance = try! Realm()
-    
-    func saveRealmData(data: RealmTaskData) {
-        let model = RealmTaskData()
+        
+    func saveRealmData(data: RealmTaskObject) {
+        let model = RealmTaskObject()
+        let id = UserDefaults.standard.integer(forKey: "modelID")
+        model.id = id
+        UserDefaults.standard.set(id + 1, forKey: "modelID")
+        
         model.title = data.title
         model.contents = data.contents
         model.satisfy = data.satisfy
         model.date = data.date
-        
+        print(model, "MODEL")
         try! realmInstance.write {
             realmInstance.add(model)
         }
@@ -25,21 +29,22 @@ class RealmDataManager {
     
     
     func getRealmDataInfo(condition: String?) -> [TaskData] {
-        var q: Results<RealmTaskData>? = nil
+        var q: Results<RealmTaskObject>? = nil
         
         if let condition = condition {
             q = realmInstance
-                    .objects(RealmTaskData.self)
+                    .objects(RealmTaskObject.self)
                     .filter(NSPredicate(format: "date = %@", condition))
             
         } else {
             q = realmInstance
-                    .objects(RealmTaskData.self)
+                    .objects(RealmTaskObject.self)
         }
         guard let q = q else { return [] }
         
         return q.map {
-                    TaskData(title: $0.title,
+            return TaskData(id: $0.id,
+                            title: $0.title,
                              contents: $0.contents,
                              satisfy: $0.satisfy,
                              date: $0.date)

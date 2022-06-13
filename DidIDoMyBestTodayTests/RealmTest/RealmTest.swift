@@ -19,13 +19,17 @@ class RealmTest: XCTestCase {
         super.tearDown()
     }
     
+    func test_removeTest() {
+        realm.removeAllRealmData()
+    }
+    
     func test_Insert() {
         realm.removeAllRealmData()
 
-        let data1 = RealmTaskData()
-        let data2 = RealmTaskData()
-        let data3 = RealmTaskData()
-        let data4 = RealmTaskData()
+        let data1 = RealmTaskObject()
+        let data2 = RealmTaskObject()
+        let data3 = RealmTaskObject()
+        let data4 = RealmTaskObject()
         data1.title = "Data1"
         data1.contents = "CData1"
         data1.satisfy = 0
