@@ -11,6 +11,10 @@ import XCTest
 @testable import DidIDoMyBestToday
 
 class MockMainSceneViewController: MainSceneProtocol {
+    func showWriteTodoTask(presenter: WriteTodoTaskScenePresenter?) {
+        
+    }
+    
     
     
     var isCalledSetLayout: Bool = false
