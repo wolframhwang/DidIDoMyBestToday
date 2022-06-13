@@ -33,7 +33,7 @@ class WriteTodoTaskSceneViewController: UIViewController {
         let button = UIBarButtonItem()
         button.target = self
         button.action = #selector(didTappedCloseButton)
-        button.image = .remove
+        button.image = UIImage(systemName: "x.circle.fill")
         button.tintColor = .lightGray
         
         return button
