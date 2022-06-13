@@ -20,4 +20,40 @@ class ComposeSceneTest: XCTestCase {
         
         super.tearDown()
     }
+    
+    func test_viewDidLoad() {
+        sut.viewDidLoad()
+        
+        XCTAssertTrue(viewController.isCalledSetLayout)
+        XCTAssertTrue(viewController.isCalledSetAttribute)
+    }
+    
+    func test_didTappedPoint() {
+        sut.didTappedPoint(point: 1)
+        XCTAssertEqual(viewController.isCalledDidTappedPoint, 1)
+        sut.didTappedPoint(point: 2)
+        XCTAssertEqual(viewController.isCalledDidTappedPoint, 2)
+        sut.didTappedPoint(point: 1)
+        XCTAssertEqual(viewController.isCalledDidTappedPoint, 1)
+        sut.didTappedPoint(point: 3)
+        XCTAssertEqual(viewController.isCalledDidTappedPoint, 3)
+        sut.didTappedPoint(point: 1)
+        XCTAssertEqual(viewController.isCalledDidTappedPoint, 1)
+        sut.didTappedPoint(point: 4)
+        XCTAssertEqual(viewController.isCalledDidTappedPoint, 4)
+        sut.didTappedPoint(point: 1)
+        XCTAssertEqual(viewController.isCalledDidTappedPoint, 1)
+        sut.didTappedPoint(point: 5)
+        XCTAssertEqual(viewController.isCalledDidTappedPoint, 5)
+    }
+    
+    func test_didTappedCloseButton() {
+        sut.didTappedCloseButton()
+        XCTAssertTrue(viewController.isCalledDidTappedClosebutton)
+    }
+    
+    func test_didTappedSubmitButton() {
+        sut.didTappedSubmitButton()
+        XCTAssertTrue(viewController.isCalledDidTappedSubmitButton)
+    }
 }
