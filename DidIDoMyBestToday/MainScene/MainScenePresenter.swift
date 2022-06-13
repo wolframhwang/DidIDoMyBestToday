@@ -13,6 +13,7 @@ class MainScenePresenter: NSObject {
     private var tasks: [TaskData] = []
     private let realm = RealmDataManager()
     private let today = Date()
+    private let writePresenter = WriteTodoTaskScenePresenter(nil, nil)
     
     init(viewController: MainSceneProtocol?) {
         self.viewController = viewController
@@ -34,7 +35,8 @@ class MainScenePresenter: NSObject {
     }
     
     func didTappedAddTodoTask() {
-        viewController?.showWriteTodoTask()
+        writePresenter.setMainPresenter(mainPresenter: self)
+        viewController?.showWriteTodoTask(presenter: writePresenter)
     }
 }
 
@@ -62,6 +64,16 @@ extension MainScenePresenter: UITableViewDataSource {
 extension MainScenePresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension MainScenePresenter: WriteToMainProtocol {
+    func dataInform(data: TaskData) {
+        realm.saveRealmData(data: data.transRealmData())
+        tasks.append(data)
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.reloadData()
+        }
     }
 }
 

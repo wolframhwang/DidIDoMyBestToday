@@ -10,6 +10,6 @@ import Foundation
 protocol MainSceneProtocol: AnyObject {
     func setLayout()
     func setAttribute()
-    func showWriteTodoTask()
+    func showWriteTodoTask(presenter: WriteTodoTaskScenePresenter?)
     func reloadData()
 }

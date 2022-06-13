@@ -12,4 +12,13 @@ struct TaskData {
     let contents: String
     let satisfy: Int
     let date: String
+    
+    func transRealmData() -> RealmTaskData {
+        let realmData = RealmTaskData()
+        realmData.title = self.title
+        realmData.contents = self.contents
+        realmData.satisfy = self.satisfy
+        realmData.date = self.date
+        return realmData
+    }
 }

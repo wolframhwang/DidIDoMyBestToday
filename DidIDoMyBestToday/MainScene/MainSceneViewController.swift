@@ -62,9 +62,11 @@ extension MainSceneViewController: MainSceneProtocol {
         title = "오늘 난 열심히 살았는가"
     }
     
-    func showWriteTodoTask() {
-        let vc = WriteTodoTaskSceneViewController()
-        self.present(vc, animated: true)
+    func showWriteTodoTask(presenter: WriteTodoTaskScenePresenter?) {
+        let vc = WriteTodoTaskSceneViewController(presenter: presenter)
+        presenter?.setViewController(viewController: vc)
+        
+        self.present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     func reloadData() {
