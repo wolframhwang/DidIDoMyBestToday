@@ -224,6 +224,13 @@
 			path = WriteContentCell;
 			sourceTree = "<group>";
 		};
+		7BEBFAD828574FB8005CD78C /* ComposeScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ComposeScene;
+			sourceTree = "<group>";
+		};
 		7BFB05182853640A009EA3E1 = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +261,7 @@
 				7B48A4D82855C18600FE34C0 /* ErrorHandling */,
 				7B48A4D02855BE1E00FE34C0 /* RealmDataBase */,
 				7BFB055428558443009EA3E1 /* MainScene */,
+				7BEBFAD828574FB8005CD78C /* ComposeScene */,
 				7BFB05242853640A009EA3E1 /* AppDelegate.swift */,
 				7BFB05262853640A009EA3E1 /* SceneDelegate.swift */,
 				7BFB052D2853640C009EA3E1 /* Assets.xcassets */,
