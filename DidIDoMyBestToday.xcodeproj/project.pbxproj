@@ -256,6 +256,15 @@
 			path = ComposeSceneTest;
 			sourceTree = "<group>";
 		};
+		7BEBFAE82858A840005CD78C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7B48A4F5285626B800FE34C0 /* WriteContentCell */,
+				7B48A4F22856269800FE34C0 /* WrieTitleCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		7BFB05182853640A009EA3E1 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +294,7 @@
 				7B48A4DB2855CFA300FE34C0 /* Model */,
 				7B48A4D82855C18600FE34C0 /* ErrorHandling */,
 				7B48A4D02855BE1E00FE34C0 /* RealmDataBase */,
+				7BEBFAE82858A840005CD78C /* Cells */,
 				7BFB055428558443009EA3E1 /* MainScene */,
 				7BEBFAD828574FB8005CD78C /* ComposeScene */,
 				7BFB05242853640A009EA3E1 /* AppDelegate.swift */,
@@ -343,8 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				7BEBFAD6285631DC005CD78C /* WriteProtocol.swift */,
-				7B48A4F5285626B800FE34C0 /* WriteContentCell */,
-				7B48A4F22856269800FE34C0 /* WrieTitleCell */,
 				7BFB05672855B7AF009EA3E1 /* WriteTodoTaskSceneViewController.swift */,
 				7BFB056B2855B852009EA3E1 /* WriteTodoTaskSceneProtocol.swift */,
 				7BFB05692855B805009EA3E1 /* WriteTodoaskScenePresenter.swift */,
