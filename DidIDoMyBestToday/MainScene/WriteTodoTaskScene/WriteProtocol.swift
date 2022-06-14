@@ -8,5 +8,6 @@
 import Foundation
 
 protocol WriteProtocol: AnyObject {
-    
+    func setText(text: String)
+    func getInnerText() -> String
 }

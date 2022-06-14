@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteContentCell: UITableViewCell, WriteProtocol {
+class WriteContentCell: UITableViewCell {
     private lazy var textView: UITextView = {
         let textView = UITextView()
         textView.font = .systemFont(ofSize: 20)
@@ -41,4 +41,15 @@ class WriteContentCell: UITableViewCell, WriteProtocol {
         }
     }
         
+}
+
+extension WriteContentCell: WriteProtocol {
+    func setText(text: String) {
+        textView.text = text
+    }
+    
+    func getInnerText() -> String {
+        guard let text = textView.text else { return "" }
+        return text
+    }
 }

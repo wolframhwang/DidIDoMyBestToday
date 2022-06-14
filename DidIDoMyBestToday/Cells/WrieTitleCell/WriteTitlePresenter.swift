@@ -22,6 +22,12 @@ class WriteTitlePresenter: NSObject {
     }
     
     func getText() -> String {
-        return text
+        return writeTitleCell?.getInnerText() ?? ""
+    }
+    
+    func setText(text: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.writeTitleCell?.setText(text: text)
+        }
     }
 }

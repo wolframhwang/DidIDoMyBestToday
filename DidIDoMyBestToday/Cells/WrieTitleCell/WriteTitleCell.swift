@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class WriteTitleCell: UITableViewCell, WriteProtocol {
+class WriteTitleCell: UITableViewCell {
     private lazy var titleTextField: UITextField = {
         let tf = UITextField()
         tf.addTarget(self, action: #selector(didChangeTextField), for: .editingChanged)
@@ -50,6 +50,17 @@ class WriteTitleCell: UITableViewCell, WriteProtocol {
     }
     
     func getText() -> String {
+        guard let text = titleTextField.text else { return "" }
+        return text
+    }
+}
+
+extension WriteTitleCell: WriteProtocol {
+    func setText(text: String) {
+        titleTextField.text = text
+    }
+    
+    func getInnerText() -> String {
         guard let text = titleTextField.text else { return "" }
         return text
     }

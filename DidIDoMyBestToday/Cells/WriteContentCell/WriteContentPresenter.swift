@@ -21,7 +21,13 @@ class WriteContentPresenter: NSObject {
     }
     
     func getText() -> String {
-        return text
+        return writeContent?.getInnerText() ?? ""
+    }
+    
+    func setContent(text: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.writeContent?.setText(text: text)
+        }
     }
     
 }
@@ -29,7 +35,6 @@ class WriteContentPresenter: NSObject {
 extension WriteContentPresenter: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         guard let text = textView.text else { return }
-        print(text, "TEXTVIEW")
         self.text = text
     }
 }
