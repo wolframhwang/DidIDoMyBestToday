@@ -12,14 +12,20 @@ class MainScenePresenter: NSObject {
     private weak var viewController: MainSceneProtocol?
     private var tasks: [TaskData] = []
     private let realm = RealmDataManager()
-    private let today = Date()
+    private var today = Date()
     private let writePresenter = WriteTodoTaskScenePresenter(nil, nil)
+
     
     init(viewController: MainSceneProtocol?) {
         self.viewController = viewController
     }
     
     func viewDidLoad() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didDayChanged),
+                                               name: NSNotification.Name.NSCalendarDayChanged,
+                                               object: nil)
+        
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.setLayout()
             self?.viewController?.setAttribute()
@@ -37,6 +43,10 @@ class MainScenePresenter: NSObject {
     func didTappedAddTodoTask() {
         writePresenter.setMainPresenter(mainPresenter: self)
         viewController?.showWriteTodoTask(presenter: writePresenter)
+    }
+    
+    @objc func didDayChanged() {
+        viewWillAppear()
     }
 }
 
