@@ -9,4 +9,5 @@ import Foundation
 
 protocol PostToMainProtocol: AnyObject {
     func registerTaskInform(data: TaskData)
+    func modifyTaskInfrom(data: TaskData, index: Int)
 }

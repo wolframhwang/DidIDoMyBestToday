@@ -11,5 +11,6 @@ protocol MainSceneProtocol: AnyObject {
     func setLayout()
     func setAttribute()
     func showWriteTodoTask(presenter: WriteTodoTaskScenePresenter?)
+    func showComposeScene(presenter: ComposeScenePresenter?)
     func reloadData()
 }

@@ -74,7 +74,13 @@ extension MainScenePresenter: UITableViewDataSource {
 
 extension MainScenePresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        composePresenter.setTask(task: tasks[index], index: index)
         tableView.deselectRow(at: indexPath, animated: true)
+        print("SELECT")
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.showComposeScene(presenter: self?.composePresenter)
+        }
     }
 }
 
@@ -82,6 +88,14 @@ extension MainScenePresenter: PostToMainProtocol {
     func registerTaskInform(data: TaskData) {
         realm.saveRealmData(data: data.transRealmData())
         tasks.append(data)
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.reloadData()
+        }
+    }
+    
+    func modifyTaskInfrom(data: TaskData, index: Int) {
+        realm.updateRealmDataInfo(data: data.transRealmData())
+        tasks[index] = data
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.reloadData()
         }
@@ -101,6 +115,7 @@ extension MainScenePresenter {
     
     func todaysTask() {
         self.tasks = realm.getRealmDataInfo(condition: getToday())
+        print("TASKS", tasks)
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.reloadData()
         }

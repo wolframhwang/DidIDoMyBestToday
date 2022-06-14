@@ -72,4 +72,11 @@ extension MainSceneViewController: MainSceneProtocol {
     func reloadData() {
         todoListView.reloadData()
     }
+    
+    func showComposeScene(presenter: ComposeScenePresenter?) {
+        let vc = ComposeSceneViewController(presenter: presenter)
+        presenter?.setViewController(viewController: vc)
+        
+        self.present(UINavigationController(rootViewController: vc), animated: true)
+    }
 }
