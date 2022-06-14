@@ -27,9 +27,9 @@ struct TaskData {
         self.satisfy = satisfy
         self.date = date
     }
-    func transRealmData() -> RealmTaskObject {
-        let realmData = RealmTaskObject()
-        realmData.id = self.id
+    func transRealmData() -> TaskObject {
+        let realmData = TaskObject()
+        realmData.idInfo = self.id
         realmData.title = self.title
         realmData.contents = self.contents
         realmData.satisfy = self.satisfy

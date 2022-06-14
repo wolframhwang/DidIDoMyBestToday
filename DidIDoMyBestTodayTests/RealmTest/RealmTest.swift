@@ -26,10 +26,10 @@ class RealmTest: XCTestCase {
     func test_Insert() {
         realm.removeAllRealmData()
 
-        let data1 = RealmTaskObject()
-        let data2 = RealmTaskObject()
-        let data3 = RealmTaskObject()
-        let data4 = RealmTaskObject()
+        let data1 = TaskObject()
+        let data2 = TaskObject()
+        let data3 = TaskObject()
+        let data4 = TaskObject()
         data1.title = "Data1"
         data1.contents = "CData1"
         data1.satisfy = 0
