@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PostToMainProtocol: AnyObject {
-    func dataInform(data: TaskData)
+    func registerTaskInform(data: TaskData)
 }

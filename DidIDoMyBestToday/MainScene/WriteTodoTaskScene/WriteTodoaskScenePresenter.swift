@@ -46,7 +46,7 @@ class WriteTodoTaskScenePresenter : NSObject {
                             contents: writeContentPresenter.getText(),
                             satisfy: 0,
                             date: getToday())
-        mainPresenter?.dataInform(data: taskData)
+        mainPresenter?.registerTaskInform(data: taskData)
         viewController?.closeWindow()
     }
     

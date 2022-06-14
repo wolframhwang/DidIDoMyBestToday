@@ -14,7 +14,7 @@ class MainScenePresenter: NSObject {
     private let realm = RealmDataManager()
     private var today = Date()
     private let writePresenter = WriteTodoTaskScenePresenter(nil, nil)
-
+    private let composePresenter = ComposeScenePresenter(viewController: nil, mainPresenter: nil)
     
     init(viewController: MainSceneProtocol?) {
         self.viewController = viewController
@@ -25,6 +25,8 @@ class MainScenePresenter: NSObject {
                                                selector: #selector(didDayChanged),
                                                name: NSNotification.Name.NSCalendarDayChanged,
                                                object: nil)
+        writePresenter.setMainPresenter(mainPresenter: self)
+        composePresenter.setMainPresenter(mainPresenter: self)
         
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.setLayout()
@@ -41,7 +43,6 @@ class MainScenePresenter: NSObject {
     }
     
     func didTappedAddTodoTask() {
-        writePresenter.setMainPresenter(mainPresenter: self)
         viewController?.showWriteTodoTask(presenter: writePresenter)
     }
     
@@ -78,7 +79,7 @@ extension MainScenePresenter: UITableViewDelegate {
 }
 
 extension MainScenePresenter: PostToMainProtocol {
-    func dataInform(data: TaskData) {
+    func registerTaskInform(data: TaskData) {
         realm.saveRealmData(data: data.transRealmData())
         tasks.append(data)
         DispatchQueue.main.async { [weak self] in
