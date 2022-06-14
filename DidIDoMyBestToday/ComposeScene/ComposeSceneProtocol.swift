@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ComposeSceneProtocol: AnyObject {
-    
+    func setLayout()
+    func setAttribute()
+    func closeWindow()
+    func getWidth() -> CGFloat
+    func viewAlert()
 }
