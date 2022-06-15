@@ -22,7 +22,7 @@ class MainSceneViewController: UIViewController {
         button.action = #selector(didTappedAddTodoTask)
         button.target = self
         button.title = "추가"
-        button.tintColor = .darkGray
+        button.tintColor = .lightGray
         
         return button
     }()

@@ -21,16 +21,25 @@ class RealmDataManager {
         model.contents = data.contents
         model.satisfy = data.satisfy
         model.date = data.date
-        print(model, "MODEL")
+
         try! realmInstance.write {
             realmInstance.add(model)
         }
     }
     
+    func removeRealmDataInfo(data: TaskObject) {
+        let id = data.idInfo
+        if let realmData = realmInstance
+            .objects(TaskObject.self)
+            .filter(NSPredicate(format: "idInfo = %i", id)).first {
+            try! realmInstance.write {
+                realmInstance.delete(realmData)
+            }
+        }
+    }
+    
     func updateRealmDataInfo(data: TaskObject) {
         let id = data.idInfo
-        print("FCK")
-        print(data, id)
         if let realmData = realmInstance
             .objects(TaskObject.self)
             .filter(NSPredicate(format: "idInfo = %i", id)).first {

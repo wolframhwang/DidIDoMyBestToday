@@ -82,6 +82,14 @@ extension MainScenePresenter: UITableViewDelegate {
             self?.viewController?.showComposeScene(presenter: self?.composePresenter)
         }
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            realm.removeRealmDataInfo(data: tasks[indexPath.row].transRealmData())
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }    
 }
 
 extension MainScenePresenter: PostToMainProtocol {
@@ -114,8 +122,8 @@ extension MainScenePresenter {
     }
     
     func todaysTask() {
+        today = Date()
         self.tasks = realm.getRealmDataInfo(condition: getToday())
-        print("TASKS", tasks)
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.reloadData()
         }
