@@ -47,7 +47,10 @@ class MainScenePresenter: NSObject {
     }
     
     @objc func didDayChanged() {
-        viewWillAppear()
+        DispatchQueue.main.async { [weak self] in
+            self?.todaysTask()
+            self?.viewController?.reloadData()
+        }
     }
 }
 
