@@ -144,6 +144,8 @@ class PointSelectCell: UITableViewCell {
             $0.top.equalTo(pointInfoLabel.snp.bottom).offset(heightSpacing)
             $0.size.height.width.equalTo(rectWidth)
         }
+        
+        self.backgroundColor = .white
     }
     
     func setAttribute() {

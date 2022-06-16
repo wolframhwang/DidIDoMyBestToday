@@ -12,6 +12,8 @@ class WriteTitleCell: UITableViewCell {
     private lazy var titleTextField: UITextField = {
         let tf = UITextField()
         tf.addTarget(self, action: #selector(didChangeTextField), for: .editingChanged)
+        tf.textColor = .black
+        tf.attributedPlaceholder = NSAttributedString(string: "제목", attributes: [NSAttributedString.Key.foregroundColor : UIColor.darkGray])
         return tf
     }()
     private lazy var presenter: WriteTitlePresenter? = nil
@@ -46,7 +48,7 @@ class WriteTitleCell: UITableViewCell {
             $0.top.bottom.equalToSuperview()
         }
         
-        titleTextField.placeholder = "제목"
+        self.backgroundColor = .white
     }
     
     func getText() -> String {

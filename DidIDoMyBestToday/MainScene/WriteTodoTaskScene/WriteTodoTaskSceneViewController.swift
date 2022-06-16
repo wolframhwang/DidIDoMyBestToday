@@ -15,7 +15,7 @@ class WriteTodoTaskSceneViewController: UIViewController {
         let tableView = UITableView()
         tableView.register(WriteTitleCell.self, forCellReuseIdentifier: "WriteTitleCell")
         tableView.register(WriteContentCell.self, forCellReuseIdentifier: "WriteContentCell")
-        //tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.backgroundColor = .white
         
         return tableView
     }()
@@ -85,6 +85,8 @@ extension WriteTodoTaskSceneViewController: WriteTodoTaskSceneProtocol {
         navigationItem.leftBarButtonItem = closeButton
         tableView.dataSource = presenter
         tableView.delegate = presenter
+        
+        view.backgroundColor = .white
     }
     
     func reloadData() {

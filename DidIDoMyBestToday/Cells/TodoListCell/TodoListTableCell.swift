@@ -22,19 +22,22 @@ class TodoListTableCell: UITableViewCell {
     }
     
     private func setLayout() {
+        let height = self.frame.height
         [imgView, titleText].forEach {
             self.addSubview($0)
         }
         
         imgView.snp.makeConstraints {
             $0.leading.equalTo(5)
-            $0.size.width.height.equalTo(self.snp.height)
+            $0.top.equalTo(10)
+            $0.size.width.height.equalTo(height - 20)
         }
         
         titleText.snp.makeConstraints {
-            $0.leading.equalTo(imgView.snp.trailing).offset(5)
+            $0.leading.equalTo(imgView.snp.trailing).offset(10)
             $0.top.bottom.trailing.equalTo(0).inset(5)
         }
+        self.backgroundColor = .white
     }
     
     func setImage(point: ScoreEnum) {
@@ -45,7 +48,7 @@ class TodoListTableCell: UITableViewCell {
     func setText(text: String) {
         DispatchQueue.main.async { [weak self] in
             self?.titleText.text = text
-            
+            self?.titleText.textColor = .black
         }
     }
     

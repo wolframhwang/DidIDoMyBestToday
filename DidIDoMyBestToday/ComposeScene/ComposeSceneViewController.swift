@@ -18,6 +18,7 @@ class ComposeSceneViewController: UIViewController {
         tableView.register(PointSelectCell.self, forCellReuseIdentifier: "PointSelectCell")
         tableView.dataSource = presenter
         tableView.delegate = presenter
+        tableView.backgroundColor = .white
         
         return tableView
     }()

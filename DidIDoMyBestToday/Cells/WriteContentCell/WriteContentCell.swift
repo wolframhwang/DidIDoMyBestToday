@@ -11,6 +11,8 @@ class WriteContentCell: UITableViewCell {
     private lazy var textView: UITextView = {
         let textView = UITextView()
         textView.font = .systemFont(ofSize: 20)
+        textView.textColor = .black
+        textView.backgroundColor = .white
         
         return textView
     }()
@@ -39,6 +41,8 @@ class WriteContentCell: UITableViewCell {
         textView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(15)
         }
+        
+        self.backgroundColor = .white
     }
         
 }

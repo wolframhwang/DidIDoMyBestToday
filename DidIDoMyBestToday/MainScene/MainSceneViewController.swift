@@ -12,6 +12,7 @@ class MainSceneViewController: UIViewController {
     private lazy var todoListView: UITableView = {
         let tableView = UITableView()
         tableView.register(TodoListTableCell.self, forCellReuseIdentifier: "TodoListTableCell")
+        tableView.backgroundColor = .white
         tableView.delegate = presenter
         tableView.dataSource = presenter
                 
@@ -21,8 +22,15 @@ class MainSceneViewController: UIViewController {
         let button = UIBarButtonItem()
         button.action = #selector(didTappedAddTodoTask)
         button.target = self
-        button.title = "추가"
-        button.tintColor = .lightGray
+        button.image = UIImage(systemName: "plus")
+        button.tintColor = .darkGray
+        
+        return button
+    }()
+    private lazy var menuButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = UIImage(systemName: "line.horizontal.3")
+        button.tintColor = .darkGray
         
         return button
     }()
@@ -48,6 +56,7 @@ class MainSceneViewController: UIViewController {
 extension MainSceneViewController: MainSceneProtocol {
     func setLayout() {
         navigationItem.rightBarButtonItem = addTaskButton
+        navigationItem.leftBarButtonItem = menuButton
         
         [todoListView].forEach {
             view.addSubview($0)
@@ -60,13 +69,15 @@ extension MainSceneViewController: MainSceneProtocol {
     
     func setAttribute() {
         title = "오늘 난 열심히 살았는가"
+        view.backgroundColor = .white
     }
     
     func showWriteTodoTask(presenter: WriteTodoTaskScenePresenter?) {
         let vc = WriteTodoTaskSceneViewController(presenter: presenter)
         presenter?.setViewController(viewController: vc)
-        
-        self.present(UINavigationController(rootViewController: vc), animated: true)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.backgroundColor = .systemYellow
+        self.present(nav, animated: true)
     }
     
     func reloadData() {
@@ -76,7 +87,8 @@ extension MainSceneViewController: MainSceneProtocol {
     func showComposeScene(presenter: ComposeScenePresenter?) {
         let vc = ComposeSceneViewController(presenter: presenter)
         presenter?.setViewController(viewController: vc)
-        
-        self.present(UINavigationController(rootViewController: vc), animated: true)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.backgroundColor = .systemYellow
+        self.present(nav, animated: true)
     }
 }
