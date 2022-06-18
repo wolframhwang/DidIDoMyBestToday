@@ -50,7 +50,7 @@ class ComposeScenePresenter: NSObject {
         let title = writeTitlePresenter.getText()
         let contents = writeContentPresenter.getText()
         let point = pointSelectPresenter.getPoint()
-        print(title, contents, point, taskData)
+
         guard let taskData = taskData else {
             return
         }

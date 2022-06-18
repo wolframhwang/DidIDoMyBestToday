@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FSCalendar
 import UIKit
 
 class MainScenePresenter: NSObject {
@@ -110,6 +111,17 @@ extension MainScenePresenter: PostToMainProtocol {
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.reloadData()
         }
+    }
+}
+
+extension MainScenePresenter: FSCalendarDataSource {
+    
+}
+
+extension MainScenePresenter: FSCalendarDelegate, FSCalendarDelegateAppearance {
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+        print(date)
+        return .green
     }
 }
 
