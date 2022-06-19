@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		507292EB1A4264960F01CCBA /* Pods_DidIDoMyBestTodayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7952AA41A441A4C6A1C024D1 /* Pods_DidIDoMyBestTodayTests.framework */; };
+		7B2C241B285F61C8001E7A0C /* TaskSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C241A285F61C8001E7A0C /* TaskSceneViewController.swift */; };
+		7B2C241D285F61D2001E7A0C /* TaskScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C241C285F61D2001E7A0C /* TaskScenePresenter.swift */; };
+		7B2C241F285F61DC001E7A0C /* TaskSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C241E285F61DC001E7A0C /* TaskSceneProtocol.swift */; };
+		7B2C2421285F61E6001E7A0C /* TaskScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C2420285F61E6001E7A0C /* TaskScene.storyboard */; };
 		7B48A4D22855BE7700FE34C0 /* TaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4D12855BE7700FE34C0 /* TaskObject.swift */; };
 		7B48A4D42855BFA700FE34C0 /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4D32855BFA700FE34C0 /* RealmDataManager.swift */; };
 		7B48A4D72855C10E00FE34C0 /* RealmTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48A4D62855C10E00FE34C0 /* RealmTest.swift */; };
@@ -75,6 +79,10 @@
 		46C95F6ABD8EA9B106228697 /* Pods_DidIDoMyBestToday_DidIDoMyBestTodayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidIDoMyBestToday_DidIDoMyBestTodayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A43F0D7A503BE6F6858BFCB /* Pods-DidIDoMyBestToday-DidIDoMyBestTodayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DidIDoMyBestToday-DidIDoMyBestTodayUITests.debug.xcconfig"; path = "Target Support Files/Pods-DidIDoMyBestToday-DidIDoMyBestTodayUITests/Pods-DidIDoMyBestToday-DidIDoMyBestTodayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7952AA41A441A4C6A1C024D1 /* Pods_DidIDoMyBestTodayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DidIDoMyBestTodayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2C241A285F61C8001E7A0C /* TaskSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSceneViewController.swift; sourceTree = "<group>"; };
+		7B2C241C285F61D2001E7A0C /* TaskScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScenePresenter.swift; sourceTree = "<group>"; };
+		7B2C241E285F61DC001E7A0C /* TaskSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSceneProtocol.swift; sourceTree = "<group>"; };
+		7B2C2420285F61E6001E7A0C /* TaskScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskScene.storyboard; sourceTree = "<group>"; };
 		7B48A4D12855BE7700FE34C0 /* TaskObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObject.swift; sourceTree = "<group>"; };
 		7B48A4D32855BFA700FE34C0 /* RealmDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
 		7B48A4D62855C10E00FE34C0 /* RealmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTest.swift; sourceTree = "<group>"; };
@@ -169,6 +177,10 @@
 		7B2C2419285F619A001E7A0C /* TaskScene */ = {
 			isa = PBXGroup;
 			children = (
+				7B2C241A285F61C8001E7A0C /* TaskSceneViewController.swift */,
+				7B2C241C285F61D2001E7A0C /* TaskScenePresenter.swift */,
+				7B2C241E285F61DC001E7A0C /* TaskSceneProtocol.swift */,
+				7B2C2420285F61E6001E7A0C /* TaskScene.storyboard */,
 			);
 			path = TaskScene;
 			sourceTree = "<group>";
@@ -507,6 +519,7 @@
 			files = (
 				7BFB05312853640C009EA3E1 /* LaunchScreen.storyboard in Resources */,
 				7BFB052E2853640C009EA3E1 /* Assets.xcassets in Resources */,
+				7B2C2421285F61E6001E7A0C /* TaskScene.storyboard in Resources */,
 				7BFB056E2855B898009EA3E1 /* WriteTodoSceneView.storyboard in Resources */,
 				7BFB052C2853640A009EA3E1 /* MainScene.storyboard in Resources */,
 				7BEBFAE528575D66005CD78C /* ComposeScene.storyboard in Resources */,
@@ -645,6 +658,7 @@
 				7BFB056A2855B805009EA3E1 /* WriteTodoaskScenePresenter.swift in Sources */,
 				7BFB05252853640A009EA3E1 /* AppDelegate.swift in Sources */,
 				7BEBFAD7285631DC005CD78C /* WriteProtocol.swift in Sources */,
+				7B2C241D285F61D2001E7A0C /* TaskScenePresenter.swift in Sources */,
 				7BEBFADF28575D22005CD78C /* ComposeSceneViewController.swift in Sources */,
 				7B48A4D22855BE7700FE34C0 /* TaskObject.swift in Sources */,
 				7BEBFAE128575D3E005CD78C /* ComposeScenePresenter.swift in Sources */,
@@ -656,11 +670,13 @@
 				7B48A4F7285626C900FE34C0 /* WriteContentCell.swift in Sources */,
 				7BFB056C2855B852009EA3E1 /* WriteTodoTaskSceneProtocol.swift in Sources */,
 				7BEBFAD5285631CE005CD78C /* WriteContentPresenter.swift in Sources */,
+				7B2C241F285F61DC001E7A0C /* TaskSceneProtocol.swift in Sources */,
 				7BEBFAEB2858AA56005CD78C /* PointSelectCell.swift in Sources */,
 				7B48A4F4285626B200FE34C0 /* WriteTitleCell.swift in Sources */,
 				7BFB05272853640A009EA3E1 /* SceneDelegate.swift in Sources */,
 				7BEBFAE328575D4F005CD78C /* ComposeSceneProtocol.swift in Sources */,
 				7BFB056528559162009EA3E1 /* MainScenePresenter.swift in Sources */,
+				7B2C241B285F61C8001E7A0C /* TaskSceneViewController.swift in Sources */,
 				7BEBFAEF2858AB0D005CD78C /* PointSelectProtocol.swift in Sources */,
 				7B48A4D42855BFA700FE34C0 /* RealmDataManager.swift in Sources */,
 			);
