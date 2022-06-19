@@ -12,6 +12,7 @@ import UIKit
 class MainScenePresenter: NSObject {
     private weak var viewController: MainSceneProtocol?
     private var tasks: [TaskData] = []
+    private var selectDayTasks: [TaskData] = []
     private let realm = RealmDataManager()
     private var today = Date()
     private let writePresenter = WriteTodoTaskScenePresenter(nil, nil)
@@ -32,6 +33,7 @@ class MainScenePresenter: NSObject {
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.setLayout()
             self?.viewController?.setAttribute()
+            self?.viewController?.changeToTask()
         }
     }
     
@@ -53,20 +55,50 @@ class MainScenePresenter: NSObject {
             self?.viewController?.reloadData()
         }
     }
+    
+    func didTappedTaskList() {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.changeToTask()
+        }
+    }
+    
+    func didTappedCalendarList() {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.changeToCalendar()
+        }
+    }
 }
 
 extension MainScenePresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        switch tableView.tag {
+        case 0:
+            return tasks.count
+        case 1:
+            return selectDayTasks.count
+            break
+        default:
+            break
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView
                     .dequeueReusableCell(withIdentifier: "TodoListTableCell", for: indexPath)
                     as! TodoListTableCell
-
-        cell.setText(text: tasks[indexPath.row].title)
-        cell.setImage(point: changeSatisfyToScore(score: tasks[indexPath.row].satisfy))
+        switch tableView.tag {
+        case 0:
+            cell.setText(text: tasks[indexPath.row].title)
+            cell.setImage(point: changeSatisfyToScore(score: tasks[indexPath.row].satisfy))
+            break
+        case 1:
+            cell.setText(text: selectDayTasks[indexPath.row].title)
+            cell.setImage(point: changeSatisfyToScore(score: selectDayTasks[indexPath.row].satisfy))
+            break
+        default:
+            break
+        }
         
         return cell
     }
@@ -79,9 +111,17 @@ extension MainScenePresenter: UITableViewDataSource {
 extension MainScenePresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        composePresenter.setTask(task: tasks[index], index: index)
+        switch tableView.tag {
+        case 0:
+            composePresenter.setTask(task: tasks[index], index: index)
+            break
+        case 1:
+            composePresenter.setTask(task: selectDayTasks[index], index: index)
+            break
+        default:
+            break
+        }
         tableView.deselectRow(at: indexPath, animated: true)
-        print("SELECT")
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.showComposeScene(presenter: self?.composePresenter)
         }
@@ -114,18 +154,28 @@ extension MainScenePresenter: PostToMainProtocol {
     }
 }
 
-extension MainScenePresenter: FSCalendarDataSource {
-    
-}
-
-extension MainScenePresenter: FSCalendarDelegate, FSCalendarDelegateAppearance {
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-        print(date)
-        return .green
+extension MainScenePresenter: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
+    // What Todo?
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let dayInfo = getDateInfo(dayInfo: date)
+        selectDayTasks = realm.getRealmDataInfo(condition: dayInfo)
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.reloadSelectDayData()
+        }
     }
 }
 
 extension MainScenePresenter {
+    func getDateInfo(dayInfo: Date) -> String {
+        let year = Calendar.current.component(.year, from: dayInfo)
+        let month = Calendar.current.component(.month, from: dayInfo)
+        let day = Calendar.current.component(.day, from: dayInfo)
+        if month < 10 {
+            return "\(year)-0\(month)-\(day)"
+        }
+        return "\(year)-\(month)-\(day)"
+    }
+    
     func getToday() -> String {
         let year = Calendar.current.component(.year, from: today)
         let month = Calendar.current.component(.month, from: today)

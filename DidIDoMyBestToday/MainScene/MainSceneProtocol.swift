@@ -13,4 +13,7 @@ protocol MainSceneProtocol: AnyObject {
     func showWriteTodoTask(presenter: WriteTodoTaskScenePresenter?)
     func showComposeScene(presenter: ComposeScenePresenter?)
     func reloadData()
+    func reloadSelectDayData()
+    func changeToTask()
+    func changeToCalendar()
 }
