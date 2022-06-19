@@ -30,6 +30,10 @@ class WriteContentPresenter: NSObject {
         }
     }
     
+    func setEditDisable() {
+        writeContent?.setEditDisable()
+    }
+    
 }
 
 extension WriteContentPresenter: UITextViewDelegate {

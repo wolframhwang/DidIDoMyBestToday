@@ -66,4 +66,8 @@ extension WriteTitleCell: WriteProtocol {
         guard let text = titleTextField.text else { return "" }
         return text
     }
+    
+    func setEditDisable() {
+        titleTextField.isUserInteractionEnabled = false
+    }
 }

@@ -30,4 +30,8 @@ class WriteTitlePresenter: NSObject {
             self?.writeTitleCell?.setText(text: text)
         }
     }
+    
+    func setEditDisable() {
+        writeTitleCell?.setEditDisable()
+    }
 }

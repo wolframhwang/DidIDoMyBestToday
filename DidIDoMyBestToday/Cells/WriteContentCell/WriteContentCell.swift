@@ -56,4 +56,8 @@ extension WriteContentCell: WriteProtocol {
         guard let text = textView.text else { return "" }
         return text
     }
+    
+    func setEditDisable() {
+        textView.isUserInteractionEnabled = false
+    }
 }
