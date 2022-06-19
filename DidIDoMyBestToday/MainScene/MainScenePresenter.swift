@@ -13,6 +13,7 @@ class MainScenePresenter: NSObject {
     private weak var viewController: MainSceneProtocol?
     private var tasks: [TaskData] = []
     private var selectDayTasks: [TaskData] = []
+    private var selectDay: String = ""
     private let realm = RealmDataManager()
     private var today = Date()
     private let writePresenter = WriteTodoTaskScenePresenter(nil, nil)
@@ -127,11 +128,21 @@ extension MainScenePresenter: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        let tag = tableView.tag
+        if tag == 1 { return .none }
+        return .delete
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             realm.removeRealmDataInfo(data: tasks[indexPath.row].transRealmData())
             tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            if selectDay == getToday() {
+                selectDayTasks = tasks            
+                viewController?.reloadSelectDayData()
+            }
         }
     }    
 }
@@ -159,6 +170,7 @@ extension MainScenePresenter: FSCalendarDataSource, FSCalendarDelegate, FSCalend
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dayInfo = getDateInfo(dayInfo: date)
         selectDayTasks = realm.getRealmDataInfo(condition: dayInfo)
+        selectDay = dayInfo
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.reloadSelectDayData()
         }

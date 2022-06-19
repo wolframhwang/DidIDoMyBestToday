@@ -80,11 +80,7 @@ class ComposeScenePresenter: NSObject {
         DispatchQueue.main.async { [weak self] in
             self?.viewController?.closeWindow()
         }
-    }
-    
-    func didTappedPoint(point: Int) {
-        
-    }
+    }    
 }
 
 extension ComposeScenePresenter: UITableViewDataSource {
