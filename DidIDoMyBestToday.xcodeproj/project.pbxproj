@@ -166,6 +166,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7B2C2419285F619A001E7A0C /* TaskScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TaskScene;
+			sourceTree = "<group>";
+		};
 		7B48A4CF2855BB9100FE34C0 /* WriteTodoSceneTestDir */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +322,7 @@
 				7BEBFAE82858A840005CD78C /* Cells */,
 				7BFB055428558443009EA3E1 /* MainScene */,
 				7BEBFAD828574FB8005CD78C /* ComposeScene */,
+				7B2C2419285F619A001E7A0C /* TaskScene */,
 				7BFB05242853640A009EA3E1 /* AppDelegate.swift */,
 				7BFB05262853640A009EA3E1 /* SceneDelegate.swift */,
 				7BFB052D2853640C009EA3E1 /* Assets.xcassets */,
