@@ -18,6 +18,7 @@ class MainScenePresenter: NSObject {
     private var today = Date()
     private let writePresenter = WriteTodoTaskScenePresenter(nil, nil)
     private let composePresenter = ComposeScenePresenter(viewController: nil, mainPresenter: nil)
+    private let taskScenePresenter = TaskScenePresenter(viewController: nil, mainPresenter: nil)
     
     init(viewController: MainSceneProtocol?) {
         self.viewController = viewController
@@ -77,7 +78,6 @@ extension MainScenePresenter: UITableViewDataSource {
             return tasks.count
         case 1:
             return selectDayTasks.count
-            break
         default:
             break
         }
@@ -115,17 +115,16 @@ extension MainScenePresenter: UITableViewDelegate {
         switch tableView.tag {
         case 0:
             composePresenter.setTask(task: tasks[index], index: index)
+            viewController?.showComposeScene(presenter: composePresenter)
             break
         case 1:
-            composePresenter.setTask(task: selectDayTasks[index], index: index)
+            taskScenePresenter.setTask(task: selectDayTasks[index], index: index)
+            viewController?.showTaskScene(presenter: taskScenePresenter)
             break
         default:
             break
         }
         tableView.deselectRow(at: indexPath, animated: true)
-        DispatchQueue.main.async { [weak self] in
-            self?.viewController?.showComposeScene(presenter: self?.composePresenter)
-        }
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

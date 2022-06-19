@@ -177,6 +177,14 @@ extension MainSceneViewController: MainSceneProtocol {
         self.present(nav, animated: true)
     }
     
+    func showTaskScene(presenter: TaskScenePresenter?) {
+        let vc = TaskSceneViewController(presenter: presenter)
+        presenter?.setViewController(viewController: vc)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.backgroundColor = .systemYellow
+        self.present(nav, animated: true)
+    }
+    
     func changeToTask() {
         todoListView.isHidden = false
         UIView.animate(withDuration: 1.0, animations: {
