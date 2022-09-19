@@ -27,3 +27,7 @@
   - Daily To-do List 작성 기능이 필수 기능인 만큼, **하루가 지났는지** 에 대한 여부가 중요합니다.
   - 날짜 지나는 부분에 대한 처리로 MainScene의 Presenter가 ```viewDidLoad``` 하는 시점에 ```NotificationCenter```을 통해 ```NSCalendarDayChanged```를 구독하여 처리했습니다.
   - ComposeScene / WriteScene 같은 경우 TableView의 Cell에 TextField / TextView를 담아서 작성 정보를 추출하는데, Cell(View) 단위의 MVP 패턴을 적용하여 작성한 데이터에 대한 부분을 각 Scene의 Presenter로 보낼수 있도록 구현했습니다.
+  
+| Demo |
+| ---- |
+| ![KakaoTalk_Video_2022-09-19-13-16-40 mp4](https://user-images.githubusercontent.com/29563788/190949247-5210cdec-42b4-4e36-9fee-9d59ecce6613.gif) |
